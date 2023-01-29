@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "33767279039",
+    "project_id": "managementstudent-8be85",
+    "storage_bucket": "managementstudent-8be85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33767279039:android:aecc188801853e52ed390a",
+        "android_client_info": {
+          "package_name": "com.example.managementstudent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33767279039-h1kt811a2611v3dod0vqrurhgh1e6s47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbTv1X9A8COrHR3vGnlfQPrkWFmsVlaio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33767279039-h1kt811a2611v3dod0vqrurhgh1e6s47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
