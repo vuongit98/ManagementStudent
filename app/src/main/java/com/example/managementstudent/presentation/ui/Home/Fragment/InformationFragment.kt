@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.managementstudent.R
+import com.example.managementstudent.databinding.FragmentInformationBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,12 +31,21 @@ class InformationFragment : Fragment() {
         }
     }
 
+    lateinit var viewBindingProfile : FragmentInformationBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_information, container, false)
+        viewBindingProfile = FragmentInformationBinding.inflate(layoutInflater)
+
+        viewBindingProfile.btnUpdateProfile.setOnClickListener {
+
+        }
+        viewBindingProfile.btnUpdatePass.setOnClickListener {
+
+        }
+        return viewBindingProfile.root
     }
 
     companion object {

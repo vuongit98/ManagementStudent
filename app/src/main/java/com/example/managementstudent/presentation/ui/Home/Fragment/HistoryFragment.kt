@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.managementstudent.R
+import com.example.managementstudent.data.model.Grade
 import com.example.managementstudent.databinding.FragmentHistoryBinding
+import com.example.managementstudent.presentation.ui.Adapter.ClassAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,14 +37,25 @@ class HistoryFragment : Fragment() {
     }
 
     lateinit var viewBinding : FragmentHistoryBinding
+    val adapterClass : ClassAdapter by lazy {
+        ClassAdapter({
+            Toast.makeText(activity,"${it.nameGrade}", Toast.LENGTH_SHORT).show()
+        })
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         viewBinding = FragmentHistoryBinding.inflate(layoutInflater)
+        val mListClass = mutableListOf<Grade>()
+        for(i in 6 .. 9) {
+            mListClass.add(Grade(System.currentTimeMillis().toString(),"Grade $i", 25,"2023"))
+        }
+        adapterClass.diffUtil.submitList(mListClass)
         viewBinding.rcvClass.apply {
             hasFixedSize()
+            adapter = adapterClass
             layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         }
         return viewBinding.root
